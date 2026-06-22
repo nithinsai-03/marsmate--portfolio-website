@@ -171,7 +171,7 @@ export default function IntelligenceCore() {
   return (
     <Canvas
       dpr={[1, 1.8]}
-      camera={{ position: [0, 0, 8], fov: 45 }}
+      camera={{ position: [0, 0, 11], fov: 45 }}
       gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
     >
       <AdaptiveDpr pixelated />
@@ -180,9 +180,11 @@ export default function IntelligenceCore() {
       <pointLight position={[-6, -4, -4]} intensity={80} color={CYAN} />
       <pointLight position={[0, 0, 4]} intensity={40} color={MAGENTA} />
       <Stars radius={60} depth={40} count={2200} factor={3} saturation={0} fade speed={0.6} />
-      <Float speed={1.2} floatIntensity={0.5} rotationIntensity={0.2}>
-        <Core />
-      </Float>
+      <group scale={0.72} position={[0, 0.15, 0]}>
+        <Float speed={1.2} floatIntensity={0.5} rotationIntensity={0.2}>
+          <Core />
+        </Float>
+      </group>
       <ParticleField />
     </Canvas>
   )

@@ -83,16 +83,16 @@ export function Investors() {
                   ARR index
                 </span>
               </div>
-              <div className="mt-8 flex flex-1 items-end justify-between gap-3">
+              <div className="mt-8 flex h-56 items-end justify-between gap-3">
                 {GROWTH.map((h, i) => (
-                  <div key={i} className="flex flex-1 flex-col items-center gap-2">
+                  <div key={i} className="flex h-full flex-1 flex-col items-center justify-end gap-2">
                     <motion.div
-                      initial={{ height: 0 }}
-                      whileInView={{ height: `${h}%` }}
-                      viewport={{ once: true }}
+                      initial={{ scaleY: 0 }}
+                      whileInView={{ scaleY: 1 }}
+                      viewport={{ once: true, amount: 0.2 }}
                       transition={{ duration: 0.9, delay: i * 0.1, ease: 'easeOut' }}
-                      className="w-full rounded-t-md bg-gradient-to-t from-flame/40 to-flame"
-                      style={{ minHeight: 8 }}
+                      className="w-full origin-bottom rounded-t-md bg-gradient-to-t from-flame/40 via-ember to-cyan glow-flame"
+                      style={{ height: `${h}%`, minHeight: 10 }}
                     />
                     <span className="text-[10px] text-muted-foreground">
                       Y{i + 1}

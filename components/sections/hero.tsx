@@ -48,6 +48,7 @@ export function Hero() {
         animate="show"
         className="relative z-10 flex max-w-4xl flex-col items-center text-center"
       >
+        <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[140%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(5,5,5,0.78),rgba(5,5,5,0.35)_45%,transparent_70%)]" />
         <motion.div
           variants={item}
           className="mb-7 inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-xs font-medium tracking-wide text-muted-foreground"
