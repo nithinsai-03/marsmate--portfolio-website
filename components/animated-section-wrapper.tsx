@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 interface AnimatedSectionWrapperProps {
@@ -17,8 +17,11 @@ export function AnimatedSectionWrapper({
   addParticles = true,
 }: AnimatedSectionWrapperProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    
     // Parallax effect on scroll
     const handleScroll = () => {
       if (!sectionRef.current) return;
@@ -40,9 +43,9 @@ export function AnimatedSectionWrapper({
       id={id}
       className={`relative ${className}`}
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      whileInView={mounted ? { opacity: 1 } : undefined}
       transition={{ duration: 0.8 }}
-      viewport={{ once: false, margin: '-200px' }}
+      viewport={mounted ? { once: false, margin: '-200px' } : undefined}
     >
       {/* Animated gradient background */}
       <div className="pointer-events-none absolute inset-0 -z-10">

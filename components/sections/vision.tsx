@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { Reveal } from '@/components/reveal'
-import { AnimatedSectionWrapper } from '@/components/animated-section-wrapper'
 
 export function Vision() {
 
