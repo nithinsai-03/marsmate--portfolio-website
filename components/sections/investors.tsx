@@ -8,6 +8,7 @@ import {
   Infinity as InfinityIcon,
 } from 'lucide-react'
 import { SectionHeading, Reveal } from '@/components/reveal'
+import { AnimatedSectionWrapper } from '@/components/animated-section-wrapper'
 
 const METRICS = [
   { label: 'Serviceable market', value: '$1.4T', sub: 'global startup economy' },
@@ -43,7 +44,7 @@ const GROWTH = [28, 41, 55, 72, 88, 100]
 
 export function Investors() {
   return (
-    <section id="investors" className="relative px-4 py-24 sm:py-32">
+    <AnimatedSectionWrapper id="investors" className="relative px-4 py-24 sm:py-32">
       <div className="pointer-events-none absolute inset-0 grid-fade opacity-50" />
       <div className="relative mx-auto max-w-6xl">
         <SectionHeading
@@ -123,6 +124,6 @@ export function Investors() {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSectionWrapper>
   )
 }

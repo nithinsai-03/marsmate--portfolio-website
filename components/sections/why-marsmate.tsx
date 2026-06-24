@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Check, Minus } from 'lucide-react'
 import { SectionHeading, Reveal } from '@/components/reveal'
+import { AnimatedSectionWrapper } from '@/components/animated-section-wrapper'
 
 const ROWS = [
   { label: 'Time to validated launch', traditional: '12–24 months', marsmate: '4–8 weeks' },
@@ -15,7 +16,7 @@ const ROWS = [
 
 export function WhyMarsMate() {
   return (
-    <section id="why" className="relative px-4 py-24 sm:py-32">
+    <AnimatedSectionWrapper id="why" className="relative px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-5xl">
         <SectionHeading
           eyebrow="Why MarsMate"
@@ -60,6 +61,6 @@ export function WhyMarsMate() {
           </div>
         </Reveal>
       </div>
-    </section>
+    </AnimatedSectionWrapper>
   )
 }

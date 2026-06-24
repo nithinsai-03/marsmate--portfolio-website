@@ -14,6 +14,7 @@ import { Vision } from '@/components/sections/vision'
 import { Contact } from '@/components/sections/contact'
 import { Footer } from '@/components/sections/footer'
 import { MainScene } from '@/components/three/scene-manager'
+import { ThemeToggle } from '@/components/theme-toggle'
 import { useEffect, useState } from 'react'
 
 export default function Page() {
@@ -26,6 +27,7 @@ export default function Page() {
   return (
     <>
       {mounted && <MainScene />}
+      {mounted && <ThemeToggle />}
       <main className="relative z-20">
         <SiteNav />
         <Hero />

@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Reveal } from '@/components/reveal'
+import { AnimatedSectionWrapper } from '@/components/animated-section-wrapper'
 
 export function Vision() {
   const ref = useRef<HTMLDivElement>(null)
@@ -15,10 +16,10 @@ export function Vision() {
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.8, 1], [0.4, 0.7, 0.7, 0.3])
 
   return (
-    <section
-      id="vision"
+    <AnimatedSectionWrapper
       ref={ref}
-      className="relative flex min-h-[90vh] items-center justify-center overflow-hidden px-4 py-28"
+      id="vision"
+      className="relative px-4 py-24 sm:py-32"
     >
       <motion.div style={{ y, scale, opacity }} className="absolute inset-0 z-0">
         <img
@@ -59,6 +60,6 @@ export function Vision() {
           </a>
         </Reveal>
       </div>
-    </section>
+    </AnimatedSectionWrapper>
   )
 }

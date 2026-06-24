@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Bot, Send, CheckCircle2, Terminal } from 'lucide-react'
 import { SectionHeading } from '@/components/reveal'
+import { AnimatedSectionWrapper } from '@/components/animated-section-wrapper'
 
 type FieldKey =
   | 'name'
@@ -36,7 +37,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative px-4 py-24 sm:py-32">
+    <AnimatedSectionWrapper id="contact" className="relative px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Contact"
@@ -209,7 +210,7 @@ export function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSectionWrapper>
   )
 }
 

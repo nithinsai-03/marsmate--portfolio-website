@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Check, Brain, Radar, GitBranch } from 'lucide-react'
 import { SectionHeading, Reveal } from '@/components/reveal'
+import { AnimatedSectionWrapper } from '@/components/animated-section-wrapper'
 
 const PRODUCTS = [
   {
@@ -52,7 +53,7 @@ export function Products() {
   const current = PRODUCTS.find((p) => p.id === active)!
 
   return (
-    <section id="products" className="relative px-4 py-24 sm:py-32">
+    <AnimatedSectionWrapper id="products" className="relative px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Products"
@@ -166,6 +167,6 @@ export function Products() {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSectionWrapper>
   )
 }

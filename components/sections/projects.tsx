@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ArrowUpRight } from 'lucide-react'
 import { SectionHeading, Reveal } from '@/components/reveal'
+import { AnimatedSectionWrapper } from '@/components/animated-section-wrapper'
 
 type Project = {
   id: string
@@ -71,7 +72,7 @@ export function Projects() {
   const [selected, setSelected] = useState<Project | null>(null)
 
   return (
-    <section id="projects" className="relative px-4 py-24 sm:py-32">
+    <AnimatedSectionWrapper id="projects" className="relative px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Portfolio"
@@ -190,6 +191,6 @@ export function Projects() {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </AnimatedSectionWrapper>
   )
 }
