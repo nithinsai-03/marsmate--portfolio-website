@@ -1,14 +1,20 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Reveal } from '@/components/reveal'
 import { AnimatedSectionWrapper } from '@/components/animated-section-wrapper'
 
 export function Vision() {
   const ref = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
+  
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: mounted ? ref : undefined,
     offset: ['start end', 'end start'],
   })
   const y = useTransform(scrollYProgress, [0, 1], ['-8%', '12%'])
@@ -16,7 +22,7 @@ export function Vision() {
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.8, 1], [0.4, 0.7, 0.7, 0.3])
 
   return (
-    <AnimatedSectionWrapper
+    <div
       ref={ref}
       id="vision"
       className="relative px-4 py-24 sm:py-32"
@@ -60,6 +66,6 @@ export function Vision() {
           </a>
         </Reveal>
       </div>
-    </AnimatedSectionWrapper>
+    </div>
   )
 }
