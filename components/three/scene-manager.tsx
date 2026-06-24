@@ -94,8 +94,8 @@ function DynamicScene() {
   );
 }
 
-// Main 3D Scene Component
-export function MainScene() {
+// Wrapper component to ensure theme context is available
+function SceneWrapper() {
   const { theme } = useTheme();
 
   return (
@@ -114,4 +114,9 @@ export function MainScene() {
       <DynamicScene />
     </Canvas>
   );
+}
+
+// Main 3D Scene Component
+export function MainScene() {
+  return <SceneWrapper />;
 }

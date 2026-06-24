@@ -1,33 +1,17 @@
 'use client'
 
-import { useRef, useEffect, useState } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Reveal } from '@/components/reveal'
 import { AnimatedSectionWrapper } from '@/components/animated-section-wrapper'
 
 export function Vision() {
-  const ref = useRef<HTMLDivElement>(null)
-  const [mounted, setMounted] = useState(false)
-  
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  const { scrollYProgress } = useScroll({
-    target: mounted ? ref : undefined,
-    offset: ['start end', 'end start'],
-  })
-  const y = useTransform(scrollYProgress, [0, 1], ['-8%', '12%'])
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.15, 1, 1.1])
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.8, 1], [0.4, 0.7, 0.7, 0.3])
 
   return (
-    <div
-      ref={ref}
+    <section
       id="vision"
       className="relative px-4 py-24 sm:py-32"
     >
-      <motion.div style={{ y, scale, opacity }} className="absolute inset-0 z-0">
+      <motion.div className="absolute inset-0 z-0">
         <img
           src="/vision/earth-network.png"
           alt="Earth transformed into a connected global innovation network"
@@ -66,6 +50,6 @@ export function Vision() {
           </a>
         </Reveal>
       </div>
-    </div>
+    </section>
   )
 }
